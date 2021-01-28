@@ -35,8 +35,14 @@ class Hello(Resource):
 		sim_scores = sim_scores[1:11]
 		movie_indices = [sim_score[0] for sim_score in sim_scores]
 		df = indices['name'].iloc[movie_indices]
+		print(df)
 		df = df.to_dict()
-		return jsonify(df)
+		l=[]
+		for i in df.values():
+			l.append(i)
+		print(l)
+		return jsonify({"movie":l})
+
 	# Corresponds to POST request 
 	def post(self,title):
 		indices = pd.read_csv("indices.csv")
@@ -56,8 +62,14 @@ class Hello(Resource):
 		sim_scores = sim_scores[1:11]
 		movie_indices = [sim_score[0] for sim_score in sim_scores]
 		df = indices['name'].iloc[movie_indices]
+		print(df)
 		df = df.to_dict()
-		return jsonify(df)
+		l=[]
+		for i in df.values():
+			l.append(i)
+		print(l)
+		return jsonify({"movie":l})
+
 
 
 
