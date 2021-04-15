@@ -67,8 +67,11 @@ class Hello(Resource):
 		l=[]
 		for i in df.values():
 			l.append(i)
-		print(l)
-		return jsonify({"movie":l})
+		gf=[]
+		for i in l:
+			gf.append({"movie":i})
+			
+		return jsonify(gf)
 
 
 
