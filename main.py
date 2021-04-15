@@ -41,8 +41,11 @@ class Hello(Resource):
 		for i in df.values():
 			l.append(i)
 		print(l)
-		return jsonify({"movie":l})
-
+		gf=[]
+		for i in l:
+			gf.append({"movie":i})
+			
+		return jsonify(gf)
 	# Corresponds to POST request 
 	def post(self,title):
 		indices = pd.read_csv("indices.csv")
